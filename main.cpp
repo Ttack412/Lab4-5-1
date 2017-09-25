@@ -6,17 +6,20 @@ int main() {
     
 string sentence; 
 getline(cin, sentence);
+int i;
 
-
-for(int i; i < sentence.length(); i++)
-{
-    //checks to see if the char is equal to the char behind it
-    if(sentence.at(i) == ' ' && sentence.at(i--) == ' ')
+while(i < sentence.length())
+{   
+    //checks to see if there is two spaces in a row
+    if(sentence.at(i) == ' ' && sentence.at((i) - 1) == ' ')
     {
-        //erases a char
+       //erases a char
        sentence.erase(i,1);
     }
-       
+    else 
+    {
+        i++;
+    }
 }
 
 cout << sentence << "\n"; 
